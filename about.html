@@ -21,18 +21,18 @@
       <script src="./lib/t.min.js"></script>
 
      
-      <link rel="stylesheet" href="animate.css">
+      <link rel="stylesheet" href="./lib/animate.css">
       <script src="./lib/wow.min.js"></script>
 </head>
 
 <body>
-    
+    <div class="ball"></div>
     <div class="wrapper">
 
          
          <nav>
             <span id="brand">
-                <a href="index.html">.herry</a>
+                <a href="index.html"><img src="./assets/logo.png" width="60px" height="45px"></a>
             </span>
 
             <ul id="menu">
@@ -120,17 +120,16 @@
 
                         <div class="col-lg-4" id="personal">
                             <p class="wow fadeInUp">Connect with me</p>
-                            <h4 class="wow fadeInUp" data-wow-delay="0.2">Ig. @herrysuartawan_</h4>
+                            <h4 class="wow fadeInUp" data-wow-delay="0.2"><a href="https://www.instagram.com/herrysuartawan_/">.Ig @herrysuartawan_</a></h4>
                         </div>
 
                         <div class="col-lg-4" id="media">
                             <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
 
                             <ul>
-                                  <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s">fb</li>
-                                  <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s">ig</li>
-                                  <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s">tw</li>
-                                  <li id="yt" class="wow fadeInUp" data-wow-delay="1s">yt</li>
+                                  <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s"><a href="https://www.facebook.com/herryadjhoest">.facebook</a></li>
+                                  <li id="tw" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://github.com/Herry408">.github</a></li>
+                
                             </ul>
 
                             <br><br>
@@ -138,7 +137,7 @@
 
                       <div class="col-lg-4" id="address">
                             <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                            <h4 class="wow fadeInUp" data-wow-delay="0.2s">suartawan.herry@gmail.com</h4>
+                            <h4 class="wow fadeInUp" data-wow-delay="0.2s"><a href="">suartawan.herry@gmail.com</a></h4>
                             <br><br>
                       </div>
                     </div>
@@ -153,7 +152,7 @@
 
       
        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
        <script type="text/javascript">
  
@@ -174,8 +173,6 @@
              $("#resize").toggleClass("active");
        });
  
-      
-       
  
        TweenMax.from("#brand", 1, {
              delay: 0.4,
@@ -190,10 +187,31 @@
              ease: Expo.easeInOut
        }, 0.1);
  
-       
- 
        new WOW().init();
  
+       gsap.set(".ball", {xPercent: -50, yPercent: -50});
+
+        const ball = document.querySelector(".ball");
+        const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        const mouse = { x: pos.x, y: pos.y };
+        const speed = 0.35;
+
+        const xSet = gsap.quickSetter(ball, "x", "px");
+        const ySet = gsap.quickSetter(ball, "y", "px");
+
+        window.addEventListener("mousemove", e => {    
+        mouse.x = e.x;
+        mouse.y = e.y;  
+        });
+
+        gsap.ticker.add(() => {
+        const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio()); 
+
+        pos.x += (mouse.x - pos.x) * dt;
+        pos.y += (mouse.y - pos.y) * dt;
+        xSet(pos.x);
+        ySet(pos.y);
+        });
        </script>
 </body>
 </html>
