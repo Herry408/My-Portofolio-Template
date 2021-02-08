@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compitable" content="ie=edge">
-    <meta name="author" content="Herry - Suartawan">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="author" content="I Putu Gede Herry Suartawan">
+      <meta name="description" content="By Herry Suartawan">
+      <meta property="og:type" content="Website">
+      <meta property="og:title" content="Contact || Tobangado Project Photography || Urban Street Artist || Home">
+      <meta property="og:description" content="I can be said to be a street artist, my madness towards art encourages me to continue working through the lens of building my portfolio to introduce all the results of my camera shots to all people in this country, even abroad.">
+      <meta property="og:url" content="http://herry-suartawan.cyou/">
+      <meta property="og:image" content="http://herry-suartawan.cyou/assets/icon.png">
+      <meta name="keywords" content="photography, artist , photo, photografer">
+      <meta name="robots" content="follow, index">
 
     <title>Contact - Herry Photography | Portofolio</title>
 
+    <link rel="stylesheet" href="./lib/style.css">
     
-    <link rel="stylesheet" href="./lib/style1.css">
+    <link rel="icon" type="image/png" href="./assets/url.png">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
     
-    <script src="./lib/t.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
 
+
+    <script src="./lib/t.min.js"></script>
     
     <link rel="stylesheet" href="./lib/animate.css">
     <script src="./lib/wow.min.js"></script>
@@ -45,12 +54,10 @@
             <div id="toggle">
                 <div class="span">menu</div>
             </div>
-
         </nav>
 
         <div id="resize">
             <div class="close-btn">close</div>
-
             <ul id="menu">
                 <li><a href="index.html">home<span>.</span></a></li>
                 <li><a href="work.html">work<span>.</span></a></li>
@@ -69,13 +76,12 @@
 
                 <div class="row">
                       <div class="col-lg-8">
-
                             <h3 class="wow fadeInUp" data-wow-delay="1s">.say hello 👋</h3><br>
                             <p class="wow fadeInUp" data-wow-delay="1.2s">"I am very happy to welcome you to share 
                                   information with me and if you want to just say hello or start a partnership with
                                   me you can fill in the form below or click the contact listed at the bottom of the 
-                                  website ..... Thank You !!!"</p>
-
+                                  website ..... Thank You !!!"
+                           </p>
                       </div>
                 </div>
           </div>
@@ -120,10 +126,8 @@
             </div>
       </div>
         
-      
       <div class="whitespace"></div>
-
-        
+       
         <div class="footer">
             <div class="container">
                 <br><br>
@@ -158,15 +162,13 @@
                           <ul>
                                 <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s"><a href="https://www.facebook.com/herryadjhoest">.facebook</a></li>
                                 <li id="git" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://github.com/Herry408">.github</a></li>
-              
-                          </ul>
-
-                          <br><br>
+                         </ul>
+                       <br><br>
                     </div>
 
                     <div class="col-lg-4" id="address">
                           <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                          <h4 class="wow fadeInUp" data-wow-delay="0.2s"><a href="">suartawan.herry@gmail.com</a></h4>
+                          <h4 class="wow fadeInUp" data-wow-delay="0.2s"><a href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=suartawan.herry@gmail.com">suartawan.herry@gmail.com</a></h4>
                           <br><br>
                     </div>
                   </div>
@@ -181,9 +183,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
         <script type="text/javascript">
   
-       
+      document.querySelector(".send").addEventListener("click", function() {
+      swal({
+      title: "Thank You!!!",
+      text: "E-mail is Successfully Sent!!!",
+      imageUrl: "./assets/logo.png",
+      imageWidth: 250,
+      imageHeight: 150,
+      background : "Black",
+      imageAlt: "Tobanga Project",
+      confirmButtonText: "Done!",
+      confirmButtonColor: "Orange",
+      reverseButtons: true,
+      });
+      });
   
         $("#toggle").click(function() {
               $(this).toggleClass('on');
